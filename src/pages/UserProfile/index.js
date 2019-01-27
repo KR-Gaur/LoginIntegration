@@ -1,6 +1,6 @@
-import React from 'react';
-import ProfileForm from './ProfileForm';
-import UserInfo from './UserInfo';
+import React from "react";
+import ProfileForm from "./ProfileForm";
+import UserInfo from "./UserInfo";
 
 const UserProfile = () => (
   <div className="content">
@@ -9,9 +9,9 @@ const UserProfile = () => (
         <div className="col-md-8">
           <ProfileForm />
         </div>
-        <div className="col-md-4">
+        {/* <div className="col-md-4">
           <UserInfo />
-        </div>
+        </div> */}
       </div>
     </div>
   </div>

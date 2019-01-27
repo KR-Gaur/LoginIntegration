@@ -1,65 +1,72 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import backgroundImage from '../assets/images/sidebar-5.jpg';
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import backgroundImage from "../assets/images/sidebar-5.jpg";
 
-const MobileMenu = ({
-  location,
-  backgroundColor,
-  backgroundImage
-}) => (
+const MobileMenu = ({ location, backgroundColor, backgroundImage }) => (
   <div>
-    <div className="mobile-nav collapse navbar-collapse has-image"
+    <div
+      className="mobile-nav collapse navbar-collapse has-image"
       data-color={backgroundColor}
       style={{
         backgroundImage: `url(${backgroundImage}`
-      }}>
-      <div className="logo">
-        <a href="http://jslancer.com" className="simple-text">
-          JSLancer
-      </a>
-      </div>
+      }}
+    >
       <ul className="nav navbar-nav">
-        <li className={location.pathname === '/' ? 'active' : null}>
+        <li className={location.pathname === "/" ? "active" : null}>
           <Link to="/">
-            <i className="pe-7s-graph"></i>
+            <i className="pe-7s-graph" />
+            <p>Mypage</p>
+          </Link>
+        </li>
+        <li className={location.pathname === "/dashboard" ? "active" : null}>
+          <Link to="/">
+            <i className="pe-7s-graph" />
             <p>Dashboard</p>
           </Link>
         </li>
-        <li className={location.pathname === '/profile' ? 'active' : null}>
+        <li className={location.pathname === "/profile" ? "active" : null}>
           <Link to="/profile">
-            <i className="pe-7s-user"></i>
+            <i className="pe-7s-user" />
             <p>User Profile</p>
           </Link>
         </li>
-        <li className={location.pathname === '/table' ? 'active' : null}>
+        <li className={location.pathname === "/table" ? "active" : null}>
           <Link to="/table">
-            <i className="pe-7s-note2"></i>
+            <i className="pe-7s-note2" />
             <p>Table List</p>
           </Link>
         </li>
-        <li className={location.pathname === '/typography' ? 'active' : null}>
+        <li className={location.pathname === "/typography" ? "active" : null}>
           <Link to="typography">
-            <i className="pe-7s-news-paper"></i>
+            <i className="pe-7s-news-paper" />
             <p>Typography</p>
           </Link>
         </li>
-        <li className={location.pathname === '/icons' ? 'active' : null}>
+        <li className={location.pathname === "/icons" ? "active" : null}>
           <Link to="/icons">
-            <i className="pe-7s-science"></i>
+            <i className="pe-7s-science" />
             <p>Icons</p>
           </Link>
         </li>
-        <li className={location.pathname === '/map' ? 'active' : null}>
+        <li className={location.pathname === "/map" ? "active" : null}>
           <Link to="/map">
-            <i className="pe-7s-map-marker"></i>
+            <i className="pe-7s-map-marker" />
             <p>Maps</p>
           </Link>
         </li>
-        <li className={location.pathname === '/notifications' ? 'active' : null}>
+        <li
+          className={location.pathname === "/notifications" ? "active" : null}
+        >
           <Link to="notifications">
-            <i className="pe-7s-bell"></i>
+            <i className="pe-7s-bell" />
             <p>Notifications</p>
+          </Link>
+        </li>
+        <li className={location.pathname === "/Mypage" ? "active" : null}>
+          <Link to="Mypage">
+            <i className="pe-7s-bell" />
+            <p>Mypage</p>
           </Link>
         </li>
       </ul>
@@ -67,13 +74,10 @@ const MobileMenu = ({
   </div>
 );
 
-
 const mapStateToProps = state => ({
   enableBackgroundImage: state.ThemeOptions.enableBackgroundImage,
   backgroundColor: state.ThemeOptions.backgroundColor,
   backgroundImage: state.ThemeOptions.backgroundImage
 });
 
-export default withRouter(
-  connect(mapStateToProps)(MobileMenu)
-);
+export default withRouter(connect(mapStateToProps)(MobileMenu));

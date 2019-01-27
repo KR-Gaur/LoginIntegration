@@ -1,7 +1,8 @@
-import defaultBackground from '../assets/images/sidebar-1.jpg';
-export const SET_ENABLE_BACKGROUND_IMAGE = 'THEME_OPTIONS/SET_ENABLE_BACKGROUND_IMAGE';
-export const SET_BACKGROUND_COLOR = 'THEME_OPTIONS/SET_BACKGROUND_COLOR';
-export const SET_BACKGROUND_IMAGE = 'THEME_OPTIONS/SET_BACKGROUND_IMAGE';
+import defaultBackground from "../assets/images/sidebar-1.jpg";
+export const SET_ENABLE_BACKGROUND_IMAGE =
+  "THEME_OPTIONS/SET_ENABLE_BACKGROUND_IMAGE";
+export const SET_BACKGROUND_COLOR = "THEME_OPTIONS/SET_BACKGROUND_COLOR";
+export const SET_BACKGROUND_IMAGE = "THEME_OPTIONS/SET_BACKGROUND_IMAGE";
 
 export const setEnableBackgroundImage = enableBackgroundImage => ({
   type: SET_ENABLE_BACKGROUND_IMAGE,
@@ -18,11 +19,14 @@ export const setBackgroundImage = backgroundImage => ({
   backgroundImage
 });
 
-export default function reducer(state = {
-  backgroundColor: 'azure',
-  enableBackgroundImage: true,
-  backgroundImage: defaultBackground
-}, action) {
+export default function reducer(
+  state = {
+    backgroundColor: "azure",
+    enableBackgroundImage: true,
+    backgroundImage: defaultBackground
+  },
+  action
+) {
   switch (action.type) {
     case SET_ENABLE_BACKGROUND_IMAGE:
       return {
